@@ -55,8 +55,7 @@ h1,h2{text-wrap:balance;letter-spacing:-.04em}
 /* hero */
 .hero{padding-block:clamp(56px,10vw,120px) clamp(48px,7vw,88px)}
 .hero h1{font-size:clamp(44px,8.2vw,104px);font-weight:700;line-height:1.08}
-.hero h1 .mk{position:relative;white-space:nowrap}
-.hero h1 .mk::after{content:"";position:absolute;left:0;right:0;bottom:-.1em;height:.09em;background:var(--accent);border-radius:2px;transform-origin:left;animation:draw 1s .5s cubic-bezier(.6,0,.2,1) both}
+.hero h1 .mk{color:var(--accent);white-space:nowrap}
 @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .hero .sub{margin-top:clamp(24px,3vw,36px);font-size:clamp(17px,1.7vw,21px);color:var(--mute);max-width:28em}
 .hero .sub b{color:var(--ink);font-weight:700}
@@ -92,6 +91,21 @@ h1,h2{text-wrap:balance;letter-spacing:-.04em}
 .what h3{font-size:22px;font-weight:700;letter-spacing:-.03em;margin-top:10px}
 .what p{margin-top:8px;color:var(--mute);font-size:15.5px}
 @media (max-width:760px){.what{grid-template-columns:1fr}}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px);margin-top:clamp(36px,5vw,56px)}
+.case{border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,34px);display:grid;gap:18px;align-content:start;min-width:0}
+.case .hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 12px}
+.case .tag{font-size:13px;font-weight:700;color:var(--accent-text);letter-spacing:.04em}
+.case .sc{font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums;white-space:nowrap}
+.case .sc b{font-size:20px;color:var(--ink);letter-spacing:-.03em}
+.case .sc b.o{color:var(--accent)}
+.case h3{font-size:clamp(20px,2.2vw,24px);font-weight:700;letter-spacing:-.035em;line-height:1.35}
+.case dl{margin:0;display:grid;grid-template-columns:72px 1fr;gap:10px 14px;font-size:15px;border-top:1px solid var(--line);padding-top:18px}
+.case dt{color:var(--mute);font-size:13px;font-weight:700;padding-top:2px}
+.case dd{margin:0}
+.case .chips{display:flex;flex-wrap:wrap;gap:6px}
+.case .chips span{font-size:13px;font-weight:700;background:var(--soft);border-radius:8px;padding:4px 10px}
+.cases-note{margin-top:16px;font-size:13px;color:var(--mute)}
+@media (max-width:760px){.cases{grid-template-columns:1fr}}
 
 .nots{display:flex;flex-wrap:wrap;gap:14px clamp(24px,4vw,48px);margin-top:clamp(32px,5vw,52px)}
 .nots span{font-size:clamp(24px,3.4vw,40px);font-weight:700;letter-spacing:-.04em;color:var(--mute);position:relative}
@@ -170,6 +184,34 @@ footer a:hover{color:var(--ink)}
     </div>
   </section>
 
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="lbl">Diagnosis</div>
+      <h2>실제로 이렇게 진단합니다.</h2>
+      <div class="cases">
+        <article class="case">
+          <div class="hd"><span class="tag">요식업 1호점 · 주점</span><span class="sc">진단 <b>8</b> → 4주 목표 <b class="o">18</b> / 20</span></div>
+          <h3>후기는 충분한데,<br>연락할 방법이 비어 있었습니다.</h3>
+          <dl>
+            <dt>지도 현황</dt><dd>구글 평점 5.0, 후기 60건 이상</dd>
+            <dt>빈칸</dt><dd><div class="chips"><span>영업시간</span><span>전화번호</span><span>단체 예약 안내</span></div></dd>
+            <dt>솔루션</dt><dd>대표 메뉴 하나를 첫 사진으로, 모임 손님용 예약 안내를 상단에.</dd>
+          </dl>
+        </article>
+        <article class="case">
+          <div class="hd"><span class="tag">교육업 1호점 · 중고등 학원</span><span class="sc">진단 <b>7</b> → 4주 목표 <b class="o">17</b> / 20</span></div>
+          <h3>성과 후기는 있는데,<br>학부모가 지도에서 볼 수 없었습니다.</h3>
+          <dl>
+            <dt>지도 현황</dt><dd>구글 평점 4.8, 졸업생의 긴 후기</dd>
+            <dt>빈칸</dt><dd><div class="chips"><span>교습비</span><span>수업 사진</span><span>후기 답글</span></div></dd>
+            <dt>솔루션</dt><dd>대상 · 시간 · 교습비를 첫 화면에, 졸업생 사례를 익명 소식으로.</dd>
+          </dl>
+        </article>
+      </div>
+      <p class="cases-note">공개된 지도 정보만으로 진단했습니다. 상호는 밝히지 않습니다. 목표 점수는 약속이 아닌 4주 실행 계획의 기준입니다.</p>
+    </div>
+  </section>
   <section class="sec" style="padding-top:0">
     <div class="wrap">
       <div class="lbl">Principle</div>
